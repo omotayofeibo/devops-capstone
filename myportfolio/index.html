@@ -1,142 +1,77 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Omotayo | Junior Cloud Engineer</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Omotayo — Junior Cloud Engineer transitioning from broadcast engineering into cloud and DevOps.">
+<meta name="theme-color" content="#07111f">
+<title>Omotayo | Junior Cloud Engineer</title>
+<style>
+:root{--bg:#07111f;--panel:#10203a;--text:#eef5ff;--muted:#a9b8d0;--cyan:#32dcff;--purple:#a78bfa;--pink:#ff65ad;--green:#75f0b0;--gold:#ffd477;--line:rgba(255,255,255,.13)}
+*{box-sizing:border-box;scroll-behavior:smooth}body{margin:0;color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 12% 8%,rgba(50,220,255,.14),transparent 30%),radial-gradient(ellipse at 88% 16%,rgba(167,139,250,.16),transparent 32%),linear-gradient(135deg,#07111f,#10102a 70%,#180d25)}
+a{color:inherit;text-decoration:none}.wrap{width:min(1140px,92%);margin:auto}.topbar{position:sticky;top:0;z-index:10;background:rgba(7,17,31,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:950;font-size:1.1rem}.brand b{color:var(--cyan)}.navlinks{display:flex;gap:22px;color:var(--muted);font-size:.9rem}.navlinks a:hover{color:white}.menu{display:none;background:none;color:white;border:1px solid var(--line);border-radius:9px;padding:8px}
+.hero{min-height:calc(100vh - 70px);display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:70px 0}.pill{display:inline-flex;gap:9px;align-items:center;padding:8px 13px;border:1px solid #32dcff55;background:#32dcff12;border-radius:99px;color:#a3efff;font-size:.78rem;font-weight:850;letter-spacing:.6px}.pulse{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
+h1{font-size:clamp(3.4rem,7.5vw,6.6rem);line-height:.93;letter-spacing:-.06em;margin:24px 0 20px;background:linear-gradient(105deg,#fff 10%,#7ceaff 48%,#c1a4ff 82%);-webkit-background-clip:text;background-clip:text;color:transparent}h2{font-size:clamp(2rem,4vw,2.9rem);line-height:1.1;letter-spacing:-.035em;margin:10px 0 16px}h3{margin:12px 0 8px}p{color:var(--muted);margin:0 0 12px}.hero h2{font-size:1.35rem;letter-spacing:0;color:#e0ebfa}.hero-copy,.lead{max-width:780px;font-size:1.02rem}.pink{color:var(--pink)}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{display:inline-flex;padding:12px 18px;border:1px solid var(--line);border-radius:12px;font-weight:850;font-size:.9rem;transition:.2s}.btn.primary{background:linear-gradient(105deg,var(--cyan),#91a4ff);color:#06111e;border:0}.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px #32dcff25}
+.terminal{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#050b14;box-shadow:0 22px 60px #0007;transform:rotate(1deg)}.termhead{padding:14px 16px;border-bottom:1px solid #1b2940;color:#8295b3;font-size:.75rem;display:flex;gap:7px;align-items:center}.dot{height:10px;width:10px;border-radius:50%}.red{background:#ff625a}.amber{background:#ffc34d}.green-dot{background:#42d879}pre{margin:0;padding:23px;color:#c6eaff;white-space:pre-wrap;font: .85rem/1.9 ui-monospace,monospace}.cg{color:var(--green)}.cp{color:#c6a9ff}.cc{color:#67e5ff}.cy{color:var(--gold)}.termfoot{padding:11px 18px;background:#0a1422;border-top:1px solid #1b2940;color:#8194b2;font-size:.75rem}
+section{padding:88px 0}.eyebrow{color:var(--cyan);font-size:.75rem;font-weight:950;letter-spacing:2px;text-transform:uppercase}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:30px}.card{padding:23px;border:1px solid var(--line);border-radius:20px;background:rgba(16,32,58,.8);box-shadow:0 15px 40px #0002}.card p{font-size:.93rem}.ico{height:46px;width:46px;display:grid;place-items:center;border-radius:14px;font-size:1.35rem;background:linear-gradient(135deg,#32dcff2e,#a78bfa35);border:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:27px}.stat{text-align:center;padding:19px 10px;border:1px solid var(--line);border-radius:16px;background:#ffffff08}.stat strong{display:block;font-size:1.8rem}.stat span{font-size:.8rem;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}.chip{padding:7px 12px;border:1px solid #32dcff55;border-radius:99px;background:#ffffff08;color:#dceaff;font-size:.84rem}.chip:nth-child(3n+2){border-color:#a78bfa66}.chip:nth-child(3n){border-color:#ff65ad66}
+.project{min-height:235px;display:flex;flex-direction:column}.tag{color:var(--gold);font-size:.7rem;font-weight:950;letter-spacing:1px;text-transform:uppercase}.stack{margin-top:auto;padding-top:17px;color:#8ceaff;font-size:.8rem;font-weight:800}
+.timeline{margin:32px 0 0 8px;padding-left:27px;border-left:2px solid #32dcff55}.event{position:relative;padding:0 0 27px 12px}.event:before{content:"";position:absolute;left:-35px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--cyan);box-shadow:0 0 16px #32dcff}.event small{color:var(--cyan);font-weight:900;letter-spacing:1.2px}.split{display:grid;grid-template-columns:1fr 1fr;gap:17px;margin-top:28px}
+.contact{padding:40px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(120deg,#32dcff1c,#a78bfa1c,#ff65ad12)}.note{font-size:.82rem;color:#8296b5;margin-top:17px}footer{padding:28px 0;border-top:1px solid var(--line);text-align:center;color:#8193ad;font-size:.85rem}
+@media(max-width:850px){.hero{grid-template-columns:1fr;min-height:auto}.grid{grid-template-columns:repeat(2,1fr)}.navlinks{gap:12px;font-size:.8rem}}
+@media(max-width:600px){.grid,.split{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}.menu{display:block}.navlinks.open{display:flex;position:absolute;top:69px;left:0;right:0;padding:18px 4%;background:#091529;flex-direction:column;border-bottom:1px solid var(--line)}h1{letter-spacing:-.04em}.contact{padding:25px}section{padding:65px 0}}
+</style>
 </head>
-<body class="bg-zinc-950 text-zinc-100 font-sans selection:bg-cyan-500 selection:text-zinc-950">
+<body>
+<div class="topbar"><nav class="wrap nav"><a class="brand" href="#home">OMOTAYO<b>.cloud</b></a><button class="menu" id="menuBtn" aria-label="Toggle navigation">☰</button><div class="navlinks" id="navlinks"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div></nav></div>
+<main>
+<header class="hero wrap" id="home">
+<div><span class="pill"><i class="pulse"></i> JUNIOR CLOUD ENGINEER · DEVOPS IN PROGRESS</span><h1>Broadcast.<br>Cloud.<br><span class="pink">Build.</span></h1><h2>Bringing a live-production engineer's mindset to cloud infrastructure.</h2><p class="hero-copy">I'm Omotayo — a broadcast and video engineer with 8+ years of experience across broadcast media, post-production and live production. I'm transitioning into cloud engineering and DevOps, building practical skills in Linux, Docker, AWS, networking and automation.</p><div class="actions"><a class="btn primary" href="#projects">Explore my projects ↗</a><a class="btn" href="#contact">Let's connect</a></div></div>
+<div class="terminal"><div class="termhead"><i class="dot red"></i><i class="dot amber"></i><i class="dot green-dot"></i><span style="margin-left:8px">omotayo@cloud-lab — terminal</span></div><pre><span class="cg">omotayo@cloud-lab</span>:~$ whoami
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="#" class="text-lg font-bold tracking-wider text-cyan-400">OMOTAYO<span class="text-zinc-500">.cloud</span></a>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-zinc-400">
-                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
-                <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
-                <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
-                <a href="#journey" class="hover:text-cyan-400 transition-colors">Journey</a>
-                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
-            </div>
-            <a href="#contact" class="px-4 h-9 flex items-center text-xs font-semibold uppercase tracking-wider bg-zinc-900 border border-zinc-700 hover:border-cyan-400 text-zinc-200 rounded-md transition-all">Let's Talk</a>
-        </div>
-    </nav>
+<span class="cp">Omotayo</span>
+Junior Cloud Engineer
 
-    <!-- Hero Section -->
-    <header class="pt-32 pb-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center min-h-[85vh]">
-        <div class="lg:col-span-7 space-y-6">
-            <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-medium text-cyan-400 bg-cyan-950/50 border border-cyan-800/40 rounded-full">
-                <span>☁️</span> JUNIOR CLOUD ENGINEER • DEVOPS IN PROGRESS
-            </div>
-            <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-white leading-none">
-                # Broadcast.<br>Cloud. Build.
-            </h1>
-            <p class="text-lg text-zinc-400 max-w-xl font-light leading-relaxed">
-                Turning years of live-production engineering into modern cloud & DevOps skills. Bringing a production engineer's mindset to the cloud ecosystem.
-            </p>
-            <div class="pt-4 flex flex-wrap gap-4">
-                <a href="#projects" class="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-zinc-950 font-semibold rounded-md shadow-lg shadow-cyan-500/10 transition-all flex items-center gap-2">View My Work <i class="fa-solid fa-arrow-right text-xs"></i></a>
-                <a href="#contact" class="px-6 py-3 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-zinc-600 font-medium rounded-md transition-all">Let's Connect</a>
-            </div>
-        </div>
+<span class="cg">omotayo@cloud-lab</span>:~$ focus --areas
 
-        <!-- Simulated Interactive Terminal Emulator -->
-        <div class="lg:col-span-5 w-full">
-            <div class="bg-zinc-900 border border-zinc-800 rounded-lg shadow-2xl overflow-hidden font-mono text-xs sm:text-sm">
-                <div class="bg-zinc-950 px-4 py-3 flex items-center justify-between border-b border-zinc-800">
-                    <div class="flex space-x-2">
-                        <div class="w-3 h-3 bg-rose-500 rounded-full"></div>
-                        <div class="w-3 h-3 bg-amber-500 rounded-full"></div>
-                        <div class="w-3 h-3 bg-emerald-500 rounded-full"></div>
-                    </div>
-                    <span class="text-zinc-500 text-xs">omotayo@cloud-lab:~</span>
-                </div>
-                <div class="p-5 space-y-4 text-zinc-300">
-                    <div>
-                        <p class="text-zinc-500">omotayo@cloud-lab:~$ <span class="text-white">whoami</span></p>
-                        <p class="text-cyan-400 mt-1">Omotayo Junior Cloud Engineer</p>
-                    </div>
-                    <div>
-                        <p class="text-zinc-500">omotayo@cloud-lab:~$ <span class="text-white">skills --show</span></p>
-                        <div class="mt-1 space-y-1 font-mono text-zinc-400">
-                            <p>Linux       <span class="text-emerald-400">████████░░</span></p>
-                            <p>Docker      <span class="text-cyan-400">███████░░░</span></p>
-                            <p>Git/GitHub  <span class="text-purple-400">███████░░░</span></p>
-                            <p>Cloud       <span class="text-sky-400">██████░░░░</span></p>
-                            <p>Networking  <span class="text-amber-400">████████░░</span></p>
-                            <p>Broadcast   <span class="text-rose-400">██████████</span></p>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="text-zinc-500">omotayo@cloud-lab:~$ <span class="text-white">status</span></p>
-                        <p class="text-amber-400 mt-1 flex items-center gap-1.5">
-                            <span class="inline-block w-2 h-2 bg-amber-400 rounded-full animate-pulse"></span> BUILDING • LEARNING • SHIPPING
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+Linux / Ubuntu     <span class="cc">ACTIVE</span>
+Docker             <span class="cc">ACTIVE</span>
+Git & GitHub       <span class="cc">ACTIVE</span>
+AWS fundamentals   <span class="cc">LEARNING</span>
+Ansible            <span class="cc">PRACTISING</span>
+Broadcast systems  <span class="cy">8+ YEARS</span>
 
-    <!-- 01 / About Me Section -->
-    <section id="about" class="py-24 border-t border-zinc-900 bg-zinc-950">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-sm font-bold tracking-widest text-zinc-500 mb-2 font-mono">01 / ABOUT ME</div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">An engineer with a different kind of production experience.</h2>
-            <p class="text-zinc-400 text-lg max-w-3xl leading-relaxed mb-12">
-                My foundation is broadcast engineering: cameras, video systems, live production, troubleshooting, post-production and keeping critical systems running when the pressure is high. That experience naturally led me toward infrastructure and DevOps, where reliability, automation and problem-solving matter just as much.
-            </p>
-            
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="p-6 bg-zinc-900/50 border border-zinc-800 rounded-xl hover:border-zinc-700 transition-colors">
-                    <div class="text-3xl font-black text-cyan-400 mb-1">8+</div>
-                    <div class="text-sm text-zinc-400 font-medium">Years in Broadcast & Video</div>
-                </div>
-                <div class="p-6 bg-zinc-900/50 border border-zinc-800 rounded-xl hover:border-zinc-700 transition-colors">
-                    <div class="text-3xl font-black text-emerald-400 mb-1">24/7</div>
-                    <div class="text-sm text-zinc-400 font-medium">Production Mindset</div>
-                </div>
-                <div class="p-6 bg-zinc-900/50 border border-zinc-800 rounded-xl hover:border-zinc-700 transition-colors">
-                    <div class="text-3xl font-black text-purple-400 mb-1">CLI</div>
-                    <div class="text-sm text-zinc-400 font-medium">Linux Hands-on Learning</div>
-                </div>
-                <div class="p-6 bg-zinc-900/50 border border-zinc-800 rounded-xl hover:border-zinc-700 transition-colors">
-                    <div class="text-3xl font-black text-amber-400 mb-1">🐳</div>
-                    <div class="text-sm text-zinc-400 font-medium">Docker Container Lab</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 02 / Technology Stack Section -->
-    <section id="skills" class="py-24 border-t border-zinc-900 bg-zinc-900/20">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-sm font-bold tracking-widest text-zinc-500 mb-2 font-mono">02 / TECHNOLOGY STACK</div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-12">My growing cloud toolbox.</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Linux -->
-                <div class="p-6 bg-zinc-900/40 border border-zinc-800/80 rounded-xl space-y-3">
-                    <div class="text-2xl">🐧</div>
-                    <h3 class="text-lg font-bold text-white">Linux</h3>
-                    <p class="text-sm text-zinc-400 leading-relaxed">Ubuntu, CLI navigation, services, permissions, packages, processes and system troubleshooting.</p>
-                </div>
-                <!-- Docker -->
-                <div class="p-6 bg-zinc-900/40 border border-zinc-800/80 rounded-xl space-y-3">
-                    <div class="text-2xl">🐳</div>
-                    <h3 class="text-lg font-bold text-white">Docker</h3>
-                    <p class="text-sm text-zinc-400 leading-relaxed">Containers, images, port mapping, container lifecycle, networking and hands-on troubleshooting.</p>
-                </div>
-                <!-- Cloud Fundamentals -->
-                <div class="p-6 bg-zinc-900/40 border border-zinc-800/80 rounded-xl space-y-3">
-                    <div class="text-2xl">☁️</div>
-                    <h3 class="text-lg font-bold text-white">Cloud Fundamentals</h3>
-                    <p class="text-sm text-zinc-400 leading-relaxed">Building a strong foundation in cloud infrastructure, networking, compute, storage and deployment concepts.</p>
-                </div>
-                <!-- DevOps -->
-                <div class="p-6 bg-zinc-900/40 border border-zinc-800/80 rounded-xl space-y-3">
-                    <div class="text-2xl">🔧</div>
-                    <h3 class="text-lg font-bold text-white">DevOps</h3>
+<span class="cg">omotayo@cloud-lab</span>:~$ status
+<span class="cy">BUILDING · TESTING · IMPROVING</span></pre><div class="termfoot">A practical learning lab — skills are represented honestly.</div></div>
+</header>
+<section id="about"><div class="wrap"><span class="eyebrow">01 / About me</span><h2>Different industry. Same engineering mindset.</h2><p class="lead">My career began in broadcast and video engineering: managing equipment, supporting live productions, troubleshooting signal and workflow issues, and delivering post-production work. Live broadcasting teaches you to prepare carefully, diagnose quickly and value reliability. Those habits now shape how I approach Linux, cloud infrastructure and DevOps.</p><div class="stats"><div class="stat"><strong>8+</strong><span>Years in broadcast & video</span></div><div class="stat"><strong>Linux</strong><span>Hands-on lab practice</span></div><div class="stat"><strong>Docker</strong><span>Container projects</span></div><div class="stat"><strong>AWS</strong><span>Cloud fundamentals</span></div></div></div></section>
+<section id="skills"><div class="wrap"><span class="eyebrow">02 / Technology stack</span><h2>Tools I'm learning and using.</h2><p class="lead">A practical mix of established production experience and developing cloud/DevOps capabilities.</p><div class="grid">
+<article class="card"><div class="ico">🐧</div><h3>Linux & Ubuntu</h3><p>Command-line navigation, files and permissions, package management, processes, services and troubleshooting in Ubuntu environments.</p></article>
+<article class="card"><div class="ico">🐳</div><h3>Docker</h3><p>Container lifecycle, images, port publishing, Docker networking and running application services in containers.</p></article>
+<article class="card"><div class="ico">☁️</div><h3>AWS fundamentals</h3><p>Hands-on learning with EC2, S3, VPCs, subnets, route tables, SSH access and basic cloud hosting.</p></article>
+<article class="card"><div class="ico">🔁</div><h3>Automation & DevOps</h3><p>Git, GitHub, Ansible inventories and playbooks, deployment workflows and CI/CD concepts.</p></article>
+<article class="card"><div class="ico">🖥️</div><h3>Web & server basics</h3><p>HTML, CSS, JavaScript, Node.js application hosting, Apache and HTTP troubleshooting.</p></article>
+<article class="card"><div class="ico">📡</div><h3>Broadcast technology</h3><p>Video engineering, cameras, vMix, NDI workflows, live streaming, LED display planning and production troubleshooting.</p></article></div>
+<div class="chips"><span class="chip">Linux</span><span class="chip">Ubuntu</span><span class="chip">Docker</span><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">AWS EC2</span><span class="chip">Amazon S3</span><span class="chip">VPC</span><span class="chip">Ansible</span><span class="chip">Apache</span><span class="chip">Node.js</span><span class="chip">Networking</span><span class="chip">vMix</span><span class="chip">NDI</span><span class="chip">Live production</span></div></div></section>
+<section id="projects"><div class="wrap"><span class="eyebrow">03 / Hands-on projects</span><h2>Building skills one deployment at a time.</h2><p class="lead">Projects based on labs and workflows you've worked through. Add repository links, screenshots and READMEs as you publish each one.</p><div class="grid">
+<article class="card project"><span class="tag">AWS · Storage · Web</span><h3>S3 Static Website Hosting</h3><p>Created an S3 static website hosting exercise and deployed a simple landing page to practise cloud storage and web delivery concepts.</p><div class="stack">Amazon S3 · HTML · Static hosting</div></article>
+<article class="card project"><span class="tag">AWS · Networking</span><h3>VPC & EC2 Lab</h3><p>Practised VPC design, subnet CIDR planning, route tables and EC2 connectivity, including troubleshooting overlapping subnet ranges.</p><div class="stack">VPC · Subnets · EC2 · SSH</div></article>
+<article class="card project"><span class="tag">Docker · Linux</span><h3>Ubuntu Container Lab</h3><p>Built a Linux practice environment using Ubuntu containers on an Apple Silicon Mac and explored packages, services, permissions and container operations.</p><div class="stack">Docker · Ubuntu · ARM64</div></article>
+<article class="card project"><span class="tag">Docker · Application</span><h3>Node.js Container Deployment</h3><p>Ran a Node.js application in a container and worked through exposing port 8085 from the container to the Mac host.</p><div class="stack">Docker · Node.js · Port mapping</div></article>
+<article class="card project"><span class="tag">Ansible · EC2</span><h3>EC2 Configuration with Ansible</h3><p>Used an inventory and playbook to connect to and configure an EC2 deployment server, then investigated remote Docker and Compose issues.</p><div class="stack">Ansible · SSH · Docker Compose</div></article>
+<article class="card project"><span class="tag">Web · Linux · Server</span><h3>Cloud-hosted Portfolio</h3><p>Deployed a web portfolio to an EC2-hosted web server and practised checking HTTP responses, server processes, ports and website files.</p><div class="stack">EC2 · Apache · HTML · HTTP</div></article></div></div></section>
+<section id="experience"><div class="wrap"><span class="eyebrow">04 / Professional foundation</span><h2>Broadcast engineering experience that transfers.</h2><div class="split"><article class="card"><div class="ico">🎥</div><h3>Broadcast & video engineering</h3><p>8+ years across broadcast media and post-production, including video equipment, technical troubleshooting and managing production workflows.</p></article><article class="card"><div class="ico">🎛️</div><h3>Live production & media services</h3><p>Experience supporting live events, camera crews, vMix production, NDI signal workflows, LED display environments and client delivery.</p></article></div><div class="timeline"><div class="event"><small>FOUNDATION</small><h3>Broadcast & video engineering</h3><p>Practical experience with broadcast systems, cameras, video equipment, post-production and troubleshooting.</p></div><div class="event"><small>EXPANSION</small><h3>Live production & media technology</h3><p>Event production, streaming workflows, vMix, camera planning, NDI and display technology.</p></div><div class="event"><small>CURRENT FOCUS</small><h3>Linux, Docker, AWS & Ansible</h3><p>Building cloud and DevOps capability through hands-on labs, deployments and systematic troubleshooting.</p></div><div class="event"><small>NEXT MILESTONE</small><h3>Junior Cloud / DevOps opportunity</h3><p>Seeking an internship or junior role where I can contribute, learn from experienced engineers and grow through real infrastructure work.</p></div></div></div></section>
+<section><div class="wrap"><span class="eyebrow">05 / What I bring</span><h2>Production discipline meets cloud curiosity.</h2><div class="grid"><article class="card"><h3>⚡ Troubleshooting mindset</h3><p>Breaking problems into smaller checks and following evidence toward the root cause.</p></article><article class="card"><h3>🎯 Reliability awareness</h3><p>Live production experience has taught me the value of preparation, continuity and dependable systems.</p></article><article class="card"><h3>🚀 Practical learner</h3><p>I build, test, debug and document. I want my portfolio to show working projects, not just a list of technologies.</p></article></div></div></section>
+<section id="contact"><div class="wrap"><div class="contact"><span class="eyebrow">06 / Let's connect</span><h2>Ready for the next engineering challenge.</h2><p class="lead">Based in Nigeria and open to junior cloud engineering opportunities, DevOps internships, entry-level infrastructure roles and collaborative projects.</p><div class="actions"><a class="btn primary" href="mailto:YOUR_EMAIL@example.com">Email me ↗</a><a class="btn" href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="btn" href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><p class="note">Replace the email, GitHub username and LinkedIn URL placeholders with your actual profile details. Add project repository links as you publish them.</p></div></div></section>
+</main>
+<footer><div class="wrap">© 2026 Omotayo · Junior Cloud Engineer · Broadcast & DevOps Technology</div></footer>
+<script>
+const menuButton=document.getElementById('menuBtn');const navLinks=document.getElementById('navlinks');
+menuButton.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>navLinks.classList.remove('open')));
+</script>
+</body>
+</html>
