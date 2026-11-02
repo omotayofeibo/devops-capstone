@@ -1,0 +1,18 @@
+services:
+  java-yearbook:
+    build:
+      context: ./java
+      dockerfile: Dockerfile
+    container_name: java-yearbook
+    ports:
+      - "8081:8081"
+    restart: unless-stopped
+
+  portfolio:
+    build:
+      context: ./myportfolio
+      dockerfile: Dockerfile
+    container_name: portfolio
+    ports:
+      - "8082:80"
+    restart: unless-stopped

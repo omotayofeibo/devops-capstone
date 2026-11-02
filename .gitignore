@@ -1,0 +1,23 @@
+# SSH private keys
+*.pem
+*.key
+
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Environment secrets
+.env
+.env.*
+
+# System files
+.DS_Store
+.vscode/
