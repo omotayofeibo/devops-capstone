@@ -17,6 +17,19 @@ public class Application {
             new InetSocketAddress(port),
             0
         );
+	
+	server.createContext("/omotayo.jpg", exchange -> {
+    byte[] image = java.nio.file.Files.readAllBytes(
+        java.nio.file.Path.of("/app/omotayo.jpg")
+    );
+
+    exchange.getResponseHeaders().set("Content-Type", "image/jpeg");
+    exchange.sendResponseHeaders(200, image.length);
+
+    try (java.io.OutputStream os = exchange.getResponseBody()) {
+        os.write(image);
+    }
+});
 
         server.createContext("/", Application::handleRequest);
 
@@ -335,7 +348,17 @@ public class Application {
                 <p class="quote">"Bloomy is an excellent choice for beginners..."</p>
             </div>
 
-        </div>
+	    <!-- Omotayo Charles Ogunfeibo -->
+	    <div class="trainee-card">
+    		<div class="photo-box">
+        	     <img src="/omotayo.jpg" alt="Omotayo Charles Ogunfeibo">
+    		</div>
+
+		 <h3 class="name">Omotayo Charles Ogunfeibo</h3>
+		 <div class="superlative">Junior Cloud Engineer / DevOps Engineer Intern
+		 <p class="quote">"Bloomy Technologies completely transformed my trajectory—going from absolutely zero tech knowledge to confidently containerizing networks, launching Linux servers, and deploying cloud systems."</p>
+	     </div>
+
     </div>
 
     <div class="footer-marquee-container">

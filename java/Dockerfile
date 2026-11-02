@@ -13,6 +13,8 @@ FROM eclipse-temurin:17-jre
 
 WORKDIR /app
 
+COPY omotayo.jpg /app/omotayo.jpg
+
 COPY --from=build /app/target/yearbook-lambda-1.0.0.jar app.jar
 
 EXPOSE 8081
