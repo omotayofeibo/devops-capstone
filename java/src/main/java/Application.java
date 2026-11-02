@@ -356,7 +356,7 @@ public class Application {
 
 		 <h3 class="name">Omotayo Charles Ogunfeibo</h3>
 		 <div class="superlative">Junior Cloud Engineer / DevOps Engineer Intern
-		 <p class="quote">"Bloomy Technologies completely transformed my trajectory—going from absolutely zero tech knowledge to confidently containerizing networks, launching Linux servers, and deploying cloud systems."</p>
+		 <p class="quote" style="font-size: 12px; font-weight: 400; text-transform: none; font-style: italic; line-height: 1.6; color: #64748b;">"Bloomy Technologies completely transformed my trajectory—going from absolutely zero tech knowledge to confidently containerizing networks, launching Linux servers, and deploying cloud systems."</p>
 	     </div>
 
     </div>
