@@ -12,22 +12,29 @@ pipeline {
         stage('Verify Environment') {
             steps {
                 sh '''
-                    echo "Checking Jenkins build environment"
                     java -version
                     git --version
                     mvn -version
                 '''
             }
         }
+
+        stage('Build Java Application') {
+            steps {
+                dir('java') {
+                    sh 'mvn -B clean package'
+                }
+            }
+        }
     }
 
     post {
         success {
-            echo 'Jenkins pipeline completed successfully!'
+            echo 'Java application built successfully!'
         }
 
         failure {
-            echo 'Jenkins pipeline failed. Check the console output.'
+            echo 'Pipeline failed. Check console output.'
         }
     }
 }
