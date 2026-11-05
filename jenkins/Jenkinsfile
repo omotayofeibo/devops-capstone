@@ -15,6 +15,8 @@ pipeline {
                     java -version
                     git --version
                     mvn -version
+                    docker --version
+                    docker compose version
                 '''
             }
         }
@@ -26,15 +28,44 @@ pipeline {
                 }
             }
         }
+
+        stage('Build Docker Images') {
+            steps {
+                sh '''
+                    docker compose -p devops-capstone build
+                '''
+            }
+        }
+
+        stage('Deploy Applications') {
+            steps {
+                sh '''
+                    docker compose -p devops-capstone up -d \
+                      --no-build --remove-orphans
+                '''
+            }
+        }
+
+        stage('Verify Deployment') {
+            steps {
+                sh '''
+                    docker compose -p devops-capstone ps
+                    curl --fail --silent --show-error \
+                      http://127.0.0.1:8081/ > /dev/null
+                    curl --fail --silent --show-error \
+                      http://127.0.0.1:8082/ > /dev/null
+                '''
+            }
+        }
     }
 
     post {
         success {
-            echo 'Java application built successfully!'
+            echo 'CI/CD pipeline completed successfully!'
         }
 
         failure {
-            echo 'Pipeline failed. Check console output.'
+            echo 'Pipeline failed. Check the console output.'
         }
     }
 }
